@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface ProjectCardProps {
   title: string;
@@ -12,6 +13,8 @@ interface ProjectCardProps {
   tools?: string[];
   githubUrl?: string;
   demoUrl?: string;
+  category: string;
+  projectIndex: number;
 }
 
 const ProjectCard = ({ 
@@ -22,10 +25,20 @@ const ProjectCard = ({
   concepts, 
   tools, 
   githubUrl, 
-  demoUrl 
+  demoUrl,
+  category,
+  projectIndex
 }: ProjectCardProps) => {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/project/${category}/${projectIndex}`);
+  };
   return (
-    <Card className="overflow-hidden bg-card shadow-medium hover:shadow-glow transition-all duration-300 group border-border hover:border-primary/50">
+    <Card 
+      className="overflow-hidden bg-card shadow-medium hover:shadow-glow transition-all duration-300 group border-border hover:border-primary/50 cursor-pointer"
+      onClick={handleCardClick}
+    >
       <div className="relative h-48 overflow-hidden">
         <img 
           src={image} 
@@ -88,13 +101,29 @@ const ProjectCard = ({
         {(githubUrl || demoUrl) && (
           <div className="flex gap-3 mt-6 pt-4 border-t border-border">
             {githubUrl && (
-              <Button variant="outline" size="sm" className="flex-1">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="flex-1"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(githubUrl, '_blank');
+                }}
+              >
                 <Github className="mr-2 h-4 w-4" />
                 Code
               </Button>
             )}
             {demoUrl && (
-              <Button variant="default" size="sm" className="flex-1">
+              <Button 
+                variant="default" 
+                size="sm" 
+                className="flex-1"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(demoUrl, '_blank');
+                }}
+              >
                 <ExternalLink className="mr-2 h-4 w-4" />
                 Demo
               </Button>
