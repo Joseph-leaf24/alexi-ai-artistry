@@ -91,6 +91,7 @@ export default {
 			fontFamily: {
 				'mono': 'var(--font-mono)',
 				'heading': 'var(--font-heading)',
+				'body': 'var(--font-body)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

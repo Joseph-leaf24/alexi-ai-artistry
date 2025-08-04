@@ -99,7 +99,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
     background-image: var(--circuit-pattern);
     background-size: 50px 50px;
   }
