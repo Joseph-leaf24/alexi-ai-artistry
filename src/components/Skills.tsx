@@ -66,12 +66,12 @@ const Skills = () => {
           {skillAreas.map((area, index) => {
             const IconComponent = area.icon;
             return (
-              <Card key={index} className="p-6 bg-card shadow-soft hover:shadow-medium transition-all duration-300 group">
+              <Card key={index} className="p-6 bg-card shadow-soft hover:shadow-glow transition-all duration-300 group border-border hover:border-primary/30">
                 <div className="flex items-center mb-4">
-                  <div className="p-3 rounded-lg bg-gradient-primary mr-4 group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent className="h-6 w-6 text-white" />
+                  <div className="p-3 rounded-lg bg-gradient-primary mr-4 group-hover:scale-110 transition-transform duration-300 group-hover:shadow-glow">
+                    <IconComponent className="h-6 w-6 text-background" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground">
+                  <h3 className="text-lg font-semibold text-foreground font-heading">
                     {area.title}
                   </h3>
                 </div>

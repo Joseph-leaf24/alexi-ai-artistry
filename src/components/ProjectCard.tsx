@@ -25,7 +25,7 @@ const ProjectCard = ({
   demoUrl 
 }: ProjectCardProps) => {
   return (
-    <Card className="overflow-hidden bg-card shadow-medium hover:shadow-large transition-all duration-300 group">
+    <Card className="overflow-hidden bg-card shadow-medium hover:shadow-glow transition-all duration-300 group border-border hover:border-primary/50">
       <div className="relative h-48 overflow-hidden">
         <img 
           src={image} 

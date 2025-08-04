@@ -2,71 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Portfolio Design System - Professional Data Science Theme */
+/* PCB-Inspired Tech Portfolio Theme */
 
 @layer base {
   :root {
-    /* Primary Brand Colors */
-    --background: 220 26% 97%;
-    --foreground: 220 13% 18%;
-    --surface: 220 20% 98%;
+    /* PCB-Inspired Tech Theme */
+    --background: 210 30% 8%;
+    --foreground: 120 100% 95%;
+    --surface: 210 25% 12%;
     
-    /* Brand Colors - Tech Blue Gradient */
-    --primary: 217 91% 60%;
-    --primary-dark: 217 91% 45%;
-    --primary-light: 217 91% 75%;
-    --primary-foreground: 0 0% 100%;
+    /* Primary - Electric Green (PCB traces) */
+    --primary: 120 100% 50%;
+    --primary-dark: 120 100% 35%;
+    --primary-light: 120 100% 65%;
+    --primary-foreground: 210 30% 8%;
     
-    /* Secondary - Teal Accent */
-    --secondary: 180 77% 45%;
-    --secondary-dark: 180 77% 35%;
-    --secondary-light: 180 77% 60%;
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary - Electric Cyan */
+    --secondary: 180 100% 50%;
+    --secondary-dark: 180 100% 35%;
+    --secondary-light: 180 100% 65%;
+    --secondary-foreground: 210 30% 8%;
     
-    /* Neutral Grays */
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 8% 46%;
-    --muted-dark: 220 14% 85%;
+    /* Neutral Tech Grays */
+    --muted: 210 20% 15%;
+    --muted-foreground: 120 20% 70%;
+    --muted-dark: 210 25% 10%;
     
-    /* Accent Colors */
-    --accent: 280 83% 70%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Electric Orange/Amber */
+    --accent: 30 100% 60%;
+    --accent-foreground: 210 30% 8%;
     
     /* Status Colors */
-    --success: 142 76% 36%;
-    --warning: 38 92% 50%;
-    --destructive: 0 84% 60%;
+    --success: 120 100% 40%;
+    --warning: 45 100% 55%;
+    --destructive: 0 100% 55%;
     --destructive-foreground: 0 0% 100%;
     
     /* UI Elements */
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 217 91% 60%;
-    --card: 0 0% 100%;
-    --card-foreground: 220 13% 18%;
+    --border: 120 50% 25%;
+    --input: 210 25% 12%;
+    --ring: 120 100% 50%;
+    --card: 210 25% 10%;
+    --card-foreground: 120 100% 95%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(180 77% 45%));
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(180 77% 45%) 50%, hsl(280 83% 70%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(220 26% 97%), hsl(220 20% 98%));
-    --gradient-surface: linear-gradient(180deg, hsl(220 26% 97%), hsl(220 20% 99%));
+    /* Popover */
+    --popover: 210 25% 10%;
+    --popover-foreground: 120 100% 95%;
     
-    /* Shadows */
-    --shadow-soft: 0 4px 6px -1px hsl(220 13% 18% / 0.1), 0 2px 4px -1px hsl(220 13% 18% / 0.06);
-    --shadow-medium: 0 10px 15px -3px hsl(220 13% 18% / 0.1), 0 4px 6px -2px hsl(220 13% 18% / 0.05);
-    --shadow-large: 0 25px 50px -12px hsl(220 13% 18% / 0.15);
-    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.3);
+    /* PCB-Inspired Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(120 100% 50%), hsl(180 100% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 30% 8%) 0%, hsl(120 100% 15%) 25%, hsl(180 100% 15%) 50%, hsl(30 100% 20%) 75%, hsl(210 30% 8%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(210 25% 10%), hsl(210 20% 15%));
+    --gradient-surface: linear-gradient(180deg, hsl(210 30% 8%), hsl(210 25% 12%));
+    --gradient-accent: linear-gradient(90deg, hsl(120 100% 50%), hsl(180 100% 50%), hsl(30 100% 60%));
     
-    /* Spacing */
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
-    --spacing-2xl: 3rem;
+    /* Tech Glow Effects */
+    --shadow-soft: 0 4px 6px -1px hsl(120 100% 50% / 0.1), 0 2px 4px -1px hsl(120 100% 50% / 0.06);
+    --shadow-medium: 0 10px 15px -3px hsl(120 100% 50% / 0.1), 0 4px 6px -2px hsl(120 100% 50% / 0.05);
+    --shadow-large: 0 25px 50px -12px hsl(120 100% 50% / 0.15);
+    --shadow-glow: 0 0 40px hsl(120 100% 50% / 0.4);
+    --shadow-cyan-glow: 0 0 30px hsl(180 100% 50% / 0.3);
+    --shadow-orange-glow: 0 0 25px hsl(30 100% 60% / 0.3);
+    
+    /* Circuit Board Effects */
+    --circuit-pattern: radial-gradient(circle at 25% 25%, hsl(120 100% 50% / 0.1) 1px, transparent 1px),
+                       radial-gradient(circle at 75% 75%, hsl(180 100% 50% / 0.1) 1px, transparent 1px);
+    --circuit-lines: linear-gradient(90deg, hsl(120 100% 50% / 0.1) 1px, transparent 1px),
+                     linear-gradient(0deg, hsl(180 100% 50% / 0.1) 1px, transparent 1px);
     
     /* Typography */
-    --font-heading: 'Inter', system-ui, sans-serif;
+    --font-heading: 'JetBrains Mono', 'Fira Code', monospace;
     --font-body: 'Inter', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
     
@@ -75,65 +80,16 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Popover */
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 13% 18%;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 210 25% 10%;
+    --sidebar-foreground: 120 100% 95%;
+    --sidebar-primary: 120 100% 50%;
+    --sidebar-primary-foreground: 210 30% 8%;
+    --sidebar-accent: 210 20% 15%;
+    --sidebar-accent-foreground: 120 100% 95%;
+    --sidebar-border: 120 50% 25%;
+    --sidebar-ring: 120 100% 50%;
   }
 }
 
@@ -143,6 +99,43 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+    background-image: var(--circuit-pattern);
+    background-size: 50px 50px;
+  }
+  
+  /* Circuit board animation */
+  @keyframes circuit-glow {
+    0%, 100% { 
+      opacity: 0.4;
+      filter: brightness(1);
+    }
+    50% { 
+      opacity: 0.8;
+      filter: brightness(1.2);
+    }
+  }
+  
+  /* Glowing effects for tech elements */
+  .tech-glow {
+    animation: circuit-glow 3s ease-in-out infinite;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-dark));
   }
 }

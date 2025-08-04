@@ -76,12 +76,21 @@ export default {
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-card': 'var(--gradient-card)',
 				'gradient-surface': 'var(--gradient-surface)',
+				'gradient-accent': 'var(--gradient-accent)',
+				'circuit-pattern': 'var(--circuit-pattern)',
+				'circuit-lines': 'var(--circuit-lines)',
 			},
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',
 				'medium': 'var(--shadow-medium)',
 				'large': 'var(--shadow-large)',
 				'glow': 'var(--shadow-glow)',
+				'cyan-glow': 'var(--shadow-cyan-glow)',
+				'orange-glow': 'var(--shadow-orange-glow)',
+			},
+			fontFamily: {
+				'mono': 'var(--font-mono)',
+				'heading': 'var(--font-heading)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

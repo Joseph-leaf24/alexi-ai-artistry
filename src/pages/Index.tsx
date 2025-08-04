@@ -58,23 +58,23 @@ const Index = () => {
       </div>
       
       {/* Footer */}
-      <footer className="bg-gradient-primary text-white py-12">
+      <footer className="bg-background border-t border-primary/30 text-foreground py-12">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="text-2xl font-bold mb-4">Ready to Collaborate?</h3>
-          <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+          <h3 className="text-2xl font-bold mb-4 text-primary font-heading">Ready to Collaborate?</h3>
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             I'm always interested in discussing data science opportunities, 
             research collaborations, and innovative AI projects.
           </p>
           <div className="flex justify-center gap-4">
-            <a href="mailto:your.email@example.com" className="text-white hover:text-white/80 transition-colors">
+            <a href="mailto:your.email@example.com" className="text-primary hover:text-primary-light transition-colors hover:shadow-glow">
               Contact Me
             </a>
-            <span className="text-white/60">•</span>
-            <a href="#" className="text-white hover:text-white/80 transition-colors">
+            <span className="text-muted-foreground">•</span>
+            <a href="#" className="text-secondary hover:text-secondary-light transition-colors hover:shadow-cyan-glow">
               LinkedIn
             </a>
-            <span className="text-white/60">•</span>
-            <a href="#" className="text-white hover:text-white/80 transition-colors">
+            <span className="text-muted-foreground">•</span>
+            <a href="#" className="text-accent hover:text-accent transition-colors hover:shadow-orange-glow">
               GitHub
             </a>
           </div>

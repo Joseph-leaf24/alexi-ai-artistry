@@ -23,7 +23,7 @@ const ProjectSection = ({ title, description, projects, id }: ProjectSectionProp
     <section id={id} className="py-16 bg-gradient-surface">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-accent bg-clip-text text-transparent font-heading">
             {title}
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
