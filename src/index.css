@@ -2,41 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Portfolio Design System - Professional Data Science Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Primary Brand Colors */
+    --background: 220 26% 97%;
+    --foreground: 220 13% 18%;
+    --surface: 220 20% 98%;
+    
+    /* Brand Colors - Tech Blue Gradient */
+    --primary: 217 91% 60%;
+    --primary-dark: 217 91% 45%;
+    --primary-light: 217 91% 75%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Teal Accent */
+    --secondary: 180 77% 45%;
+    --secondary-dark: 180 77% 35%;
+    --secondary-light: 180 77% 60%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Neutral Grays */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 46%;
+    --muted-dark: 220 14% 85%;
+    
+    /* Accent Colors */
+    --accent: 280 83% 70%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* UI Elements */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 13% 18%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(180 77% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(180 77% 45%) 50%, hsl(280 83% 70%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 26% 97%), hsl(220 20% 98%));
+    --gradient-surface: linear-gradient(180deg, hsl(220 26% 97%), hsl(220 20% 99%));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(220 13% 18% / 0.1), 0 2px 4px -1px hsl(220 13% 18% / 0.06);
+    --shadow-medium: 0 10px 15px -3px hsl(220 13% 18% / 0.1), 0 4px 6px -2px hsl(220 13% 18% / 0.05);
+    --shadow-large: 0 25px 50px -12px hsl(220 13% 18% / 0.15);
+    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.3);
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    
+    /* Typography */
+    --font-heading: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    
+    /* Animations */
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --radius: 0.75rem;
 
+    /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --popover-foreground: 220 13% 18%;
 
     --sidebar-background: 0 0% 98%;
 
