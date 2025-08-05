@@ -15,21 +15,21 @@ const Index = () => {
       {/* Projects Section */}
       <div id="projects" className="space-y-0">
         <ProjectSection
-          id="data-analytics"
+          id="dataAnalytics"
           title={projectData.dataAnalytics.title}
           description={projectData.dataAnalytics.description}
           projects={projectData.dataAnalytics.projects}
         />
         
         <ProjectSection
-          id="computer-vision"
+          id="computerVision"
           title={projectData.computerVision.title}
           description={projectData.computerVision.description}
           projects={projectData.computerVision.projects}
         />
         
         <ProjectSection
-          id="machine-learning"
+          id="machineLearning"
           title={projectData.machineLearning.title}
           description={projectData.machineLearning.description}
           projects={projectData.machineLearning.projects}

@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/alexi-ai-artistry/", // ✅ Add this line
+  base: "/alexi-ai-artistry/", 
   server: {
     host: "::",
     port: 8080,
