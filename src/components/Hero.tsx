@@ -24,11 +24,11 @@ const Hero = () => {
             Alexi Kehayias
           </h1>
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-primary font-mono">
-            Data Science & Artificial Intelligence
+            Data Science & AI Specialist
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            Third year Data Science & A.I student at Breda University of Applied Sciences, 
-            specializing in computer vision, machine learning, and MLOps deployment.
+            Transforming data into actionable insights through advanced analytics, machine learning, 
+            and cutting-edge AI solutions for business growth and innovation.
           </p>
           
           <div className="flex flex-wrap gap-4 justify-center mb-12">

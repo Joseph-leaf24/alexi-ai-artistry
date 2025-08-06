@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Skills from "@/components/Skills";
+import SpecializationSlider from "@/components/SpecializationSlider";
 import ProjectSection from "@/components/ProjectSection";
 import { projectData } from "@/data/projects";
 
@@ -11,6 +12,9 @@ const Index = () => {
       
       {/* Skills Overview */}
       <Skills />
+      
+      {/* Specialization Slider */}
+      <SpecializationSlider />
       
       {/* Projects Section */}
       <div id="projects" className="space-y-0">
