@@ -6,31 +6,31 @@
 
 @layer base {
   :root {
-    /* Professional Business Tech Theme */
-    --background: 220 25% 6%;
-    --foreground: 0 0% 98%;
-    --surface: 220 20% 10%;
+    /* Professional Business Tech Theme - Enhanced Readability */
+    --background: 218 20% 8%;
+    --foreground: 0 0% 96%;
+    --surface: 218 15% 12%;
     
-    /* Primary - Professional Blue */
-    --primary: 220 85% 55%;
-    --primary-dark: 220 85% 45%;
-    --primary-light: 220 85% 65%;
-    --primary-foreground: 0 0% 100%;
+    /* Primary - Professional Blue (Enhanced contrast) */
+    --primary: 217 91% 60%;
+    --primary-dark: 217 91% 50%;
+    --primary-light: 217 91% 70%;
+    --primary-foreground: 0 0% 98%;
     
-    /* Secondary - Elegant Teal */
-    --secondary: 185 85% 48%;
-    --secondary-dark: 185 85% 38%;
-    --secondary-light: 185 85% 58%;
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary - Refined Teal (Better readability) */
+    --secondary: 187 85% 53%;
+    --secondary-dark: 187 85% 43%;
+    --secondary-light: 187 85% 63%;
+    --secondary-foreground: 0 0% 98%;
     
-    /* Neutral Professional Grays */
-    --muted: 220 15% 18%;
-    --muted-foreground: 0 0% 70%;
-    --muted-dark: 220 20% 12%;
+    /* Neutral Professional Grays (Improved contrast) */
+    --muted: 218 12% 22%;
+    --muted-foreground: 0 0% 75%;
+    --muted-dark: 218 15% 15%;
     
-    /* Accent - Premium Gold */
-    --accent: 45 95% 58%;
-    --accent-foreground: 220 25% 6%;
+    /* Accent - Premium Gold (More subtle) */
+    --accent: 42 87% 55%;
+    --accent-foreground: 218 20% 8%;
     
     /* Status Colors */
     --success: 120 100% 40%;
@@ -38,23 +38,23 @@
     --destructive: 0 100% 55%;
     --destructive-foreground: 0 0% 100%;
     
-    /* UI Elements */
-    --border: 120 50% 25%;
-    --input: 210 25% 12%;
-    --ring: 120 100% 50%;
-    --card: 210 25% 10%;
-    --card-foreground: 120 100% 95%;
+    /* UI Elements (Enhanced contrast) */
+    --border: 217 20% 30%;
+    --input: 218 15% 12%;
+    --ring: 217 91% 60%;
+    --card: 218 15% 12%;
+    --card-foreground: 0 0% 96%;
     
     /* Popover */
     --popover: 210 25% 10%;
     --popover-foreground: 120 100% 95%;
     
-    /* Professional Business Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(220 85% 55%), hsl(185 85% 48%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 25% 6%) 0%, hsl(220 40% 12%) 25%, hsl(185 40% 15%) 50%, hsl(45 60% 20%) 75%, hsl(220 25% 6%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(220 20% 10%), hsl(220 15% 18%));
-    --gradient-surface: linear-gradient(180deg, hsl(220 25% 6%), hsl(220 20% 10%));
-    --gradient-accent: linear-gradient(90deg, hsl(220 85% 55%), hsl(185 85% 48%), hsl(45 95% 58%));
+    /* Professional Business Gradients (Enhanced) */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(187 85% 53%));
+    --gradient-hero: linear-gradient(135deg, hsl(218 20% 8%) 0%, hsl(217 30% 15%) 25%, hsl(187 30% 18%) 50%, hsl(42 50% 20%) 75%, hsl(218 20% 8%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(218 15% 12%), hsl(218 12% 22%));
+    --gradient-surface: linear-gradient(180deg, hsl(218 20% 8%), hsl(218 15% 12%));
+    --gradient-accent: linear-gradient(90deg, hsl(217 91% 60%), hsl(187 85% 53%), hsl(42 87% 55%));
     
     /* Professional Glow Effects */
     --shadow-soft: 0 4px 6px -1px hsl(220 85% 55% / 0.15), 0 2px 4px -1px hsl(220 85% 55% / 0.08);

@@ -17,7 +17,8 @@ export const projectData = {
         image: dataAnalyticsImg,
         tags: ["Power BI", "Public Health", "SDG Tracking"],
         concepts: ["Exploratory Data Analysis", "Data Visualization", "Time Series Analysis", "Regional Benchmarking"],
-        tools: ["Microsoft Power BI", "Excel", "WHO Data APIs"]
+        tools: ["Microsoft Power BI", "Excel", "WHO Data APIs"],
+        githubUrl: "" // Add your GitHub URL here
       },
       {
         title: "IKEA Card Skimming Detection Dashboard",
@@ -25,7 +26,8 @@ export const projectData = {
         image: dataAnalyticsImg,
         tags: ["Power BI", "Security Analytics", "Retail"],
         concepts: ["Security Risk Analytics", "Operational Intelligence", "Employee Behavior Analysis", "Compliance Monitoring"],
-        tools: ["Microsoft Power BI", "SQL Server", "Excel"]
+        tools: ["Microsoft Power BI", "SQL Server", "Excel"],
+        githubUrl: "" // Add your GitHub URL here
       }
     ]
   },
@@ -40,7 +42,8 @@ export const projectData = {
         image: computerVisionImg,
         tags: ["CNN", "Explainable AI", "Real-time Processing"],
         concepts: ["Convolutional Neural Networks", "Grad-CAM Explainability", "Image Classification", "Responsible AI"],
-        tools: ["Python", "TensorFlow/Keras", "OpenCV", "Matplotlib"]
+        tools: ["Python", "TensorFlow/Keras", "OpenCV", "Matplotlib"],
+        githubUrl: "" // Add your GitHub URL here
       },
       {
         title: "Primary Root Detection Pipeline (NPEC)",
@@ -48,7 +51,8 @@ export const projectData = {
         image: computerVisionImg,
         tags: ["Image Segmentation", "Agricultural AI", "Robotics Integration"],
         concepts: ["Image Segmentation", "Skeletonization", "Feature Extraction", "Transfer Learning"],
-        tools: ["Python", "TensorFlow/Keras", "OpenCV", "Stable-Baselines3"]
+        tools: ["Python", "TensorFlow/Keras", "OpenCV", "Stable-Baselines3"],
+        githubUrl: "" // Add your GitHub URL here
       }
     ]
   },
@@ -63,7 +67,8 @@ export const projectData = {
         image: machineLearningImg,
         tags: ["Deep Learning", "CRISP-DM", "Risk Prediction"],
         concepts: ["CRISP-DM Lifecycle", "Deep Learning Classification", "Feature Engineering", "Real-time Prediction"],
-        tools: ["Python", "TensorFlow/Keras", "SQL", "Streamlit"]
+        tools: ["Python", "TensorFlow/Keras", "SQL", "Streamlit"],
+        githubUrl: "" // Add your GitHub URL here
       }
     ]
   },
@@ -78,7 +83,8 @@ export const projectData = {
         image: nlpImg,
         tags: ["Multilingual NLP", "Speech Recognition", "Emotion AI"],
         concepts: ["Speech-to-Text", "Machine Translation", "Emotion Classification", "Pipeline Engineering"],
-        tools: ["Python", "HuggingFace Transformers", "Whisper", "OpenAI API"]
+        tools: ["Python", "HuggingFace Transformers", "Whisper", "OpenAI API"],
+        githubUrl: "" // Add your GitHub URL here
       }
     ]
   },
@@ -93,7 +99,8 @@ export const projectData = {
         image: researchImg,
         tags: ["Mixed Methods", "Business Research", "Statistical Analysis"],
         concepts: ["Mixed-Methods Research", "Statistical Testing", "Thematic Analysis", "Stakeholder Mapping"],
-        tools: ["Python", "SPSS", "Qualtrics", "Excel"]
+        tools: ["Python", "SPSS", "Qualtrics", "Excel"],
+        githubUrl: "" // Add your GitHub URL here
       }
     ]
   },
@@ -108,7 +115,8 @@ export const projectData = {
         image: mlopsImg,
         tags: ["Docker", "Azure ML", "CI/CD"],
         concepts: ["MLOps Lifecycle", "Container Orchestration", "Cloud Deployment", "Workflow Automation"],
-        tools: ["Docker", "Azure ML Studio", "Apache Airflow", "FastAPI", "GitHub Actions"]
+        tools: ["Docker", "Azure ML Studio", "Apache Airflow", "FastAPI", "GitHub Actions"],
+        githubUrl: "" // Add your GitHub URL here
       }
     ]
   }
