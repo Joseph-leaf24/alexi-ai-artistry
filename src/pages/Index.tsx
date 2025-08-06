@@ -6,7 +6,7 @@ import { projectData } from "@/data/projects";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">{/* Force refresh */}
       {/* Hero Section */}
       <Hero />
       
