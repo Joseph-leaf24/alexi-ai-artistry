@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { 
   BarChart3, 
@@ -17,8 +16,12 @@ interface Specialization {
   description: string;
 }
 
-const SpecializationSlider = () => {
-  const [activeSpecialization, setActiveSpecialization] = useState(0);
+interface SpecializationSliderProps {
+  activeSpecialization: number;
+  setActiveSpecialization: (index: number) => void;
+}
+
+const SpecializationSlider = ({ activeSpecialization, setActiveSpecialization }: SpecializationSliderProps) => {
 
   const specializations: Specialization[] = [
     {

@@ -1,7 +1,5 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 interface ProjectCardProps {
@@ -97,26 +95,7 @@ const ProjectCard = ({
           </div>
         </div>
         
-        {/* Action button */}
-        <div className="flex gap-3 mt-6 pt-4 border-t border-border">
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="flex-1 border-primary/30 text-primary hover:bg-primary/10 hover:border-primary"
-            onClick={(e) => {
-              e.stopPropagation();
-              if (githubUrl) {
-                window.open(githubUrl, '_blank');
-              } else {
-                // Placeholder for when GitHub URL will be added
-                alert('GitHub repository URL will be added soon!');
-              }
-            }}
-          >
-            <Github className="mr-2 h-4 w-4" />
-            View Source Code
-          </Button>
-        </div>
+        {/* Removed action button section */}
       </div>
     </Card>
   );

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Hero from "@/components/Hero";
 import Skills from "@/components/Skills";
 import SpecializationSlider from "@/components/SpecializationSlider";
@@ -5,6 +6,7 @@ import ProjectSection from "@/components/ProjectSection";
 import { projectData } from "@/data/projects";
 
 const Index = () => {
+  const [activeSpecialization, setActiveSpecialization] = useState(0);
   return (
     <div className="min-h-screen bg-background">{/* Force refresh */}
       {/* Hero Section */}
@@ -13,52 +15,73 @@ const Index = () => {
       {/* Skills Overview */}
       <Skills />
       
-      {/* Specialization Slider */}
-      <SpecializationSlider />
+      <SpecializationSlider 
+        activeSpecialization={activeSpecialization}
+        setActiveSpecialization={setActiveSpecialization}
+      />
       
-      {/* Projects Section */}
-      <div id="projects" className="space-y-0">
-        <ProjectSection
-          id="dataAnalytics"
-          title={projectData.dataAnalytics.title}
-          description={projectData.dataAnalytics.description}
-          projects={projectData.dataAnalytics.projects}
-        />
-        
-        <ProjectSection
-          id="computerVision"
-          title={projectData.computerVision.title}
-          description={projectData.computerVision.description}
-          projects={projectData.computerVision.projects}
-        />
-        
-        <ProjectSection
-          id="machineLearning"
-          title={projectData.machineLearning.title}
-          description={projectData.machineLearning.description}
-          projects={projectData.machineLearning.projects}
-        />
-        
-        <ProjectSection
-          id="nlp"
-          title={projectData.nlp.title}
-          description={projectData.nlp.description}
-          projects={projectData.nlp.projects}
-        />
-        
-        <ProjectSection
-          id="research"
-          title={projectData.research.title}
-          description={projectData.research.description}
-          projects={projectData.research.projects}
-        />
-        
-        <ProjectSection
-          id="mlops"
-          title={projectData.mlops.title}
-          description={projectData.mlops.description}
-          projects={projectData.mlops.projects}
-        />
+      {/* Projects - Only show sections for the active specialization */}
+      <div id="projects">
+        {(() => {
+          const specializationMapping: Record<number, string[]> = {
+            0: ["dataAnalytics"], // Data Analytics
+            1: ["computerVision"], // Computer Vision
+            2: ["machineLearning"], // Machine Learning
+            3: ["nlp"], // Natural Language Processing
+            4: ["research"], // Research Methods
+            5: ["mlops"] // MLOps & Deployment
+          };
+
+          const sectionsToShow = specializationMapping[activeSpecialization] || [];
+
+          return sectionsToShow.map((sectionId) => {
+            const sectionData = {
+              dataAnalytics: {
+                title: projectData.dataAnalytics.title,
+                description: projectData.dataAnalytics.description,
+                projects: projectData.dataAnalytics.projects
+              },
+              computerVision: {
+                title: projectData.computerVision.title,
+                description: projectData.computerVision.description,
+                projects: projectData.computerVision.projects
+              },
+              machineLearning: {
+                title: projectData.machineLearning.title,
+                description: projectData.machineLearning.description,
+                projects: projectData.machineLearning.projects
+              },
+              nlp: {
+                title: projectData.nlp.title,
+                description: projectData.nlp.description,
+                projects: projectData.nlp.projects
+              },
+              research: {
+                title: projectData.research.title,
+                description: projectData.research.description,
+                projects: projectData.research.projects
+              },
+              mlops: {
+                title: projectData.mlops.title,
+                description: projectData.mlops.description,
+                projects: projectData.mlops.projects
+              }
+            };
+
+            const section = sectionData[sectionId];
+            if (!section) return null;
+
+            return (
+              <ProjectSection
+                key={sectionId}
+                id={sectionId}
+                title={section.title}
+                description={section.description}
+                projects={section.projects}
+              />
+            );
+          });
+        })()}
       </div>
       
       {/* Footer */}
