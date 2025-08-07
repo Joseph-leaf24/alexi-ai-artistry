@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { 
   BarChart3, 
@@ -5,7 +6,9 @@ import {
   Brain, 
   MessageSquare, 
   Search, 
-  Settings 
+  Settings,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -22,6 +25,7 @@ interface SpecializationSliderProps {
 }
 
 const SpecializationSlider = ({ activeSpecialization, setActiveSpecialization }: SpecializationSliderProps) => {
+  const sliderRef = useRef<HTMLDivElement>(null);
 
   const specializations: Specialization[] = [
     {
@@ -66,6 +70,51 @@ const SpecializationSlider = ({ activeSpecialization, setActiveSpecialization }:
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToActiveCard = (index: number) => {
+    if (sliderRef.current) {
+      const cardWidth = 300; // 280px + 20px gap
+      const containerWidth = sliderRef.current.clientWidth;
+      const scrollPosition = Math.max(0, (index * cardWidth) - (containerWidth / 2) + (cardWidth / 2));
+      
+      sliderRef.current.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleSpecializationClick = (index: number) => {
+    setActiveSpecialization(index);
+    scrollToSection(specializations[index].id);
+    scrollToActiveCard(index);
+  };
+
+  const canScrollLeft = () => {
+    return sliderRef.current ? sliderRef.current.scrollLeft > 0 : false;
+  };
+
+  const canScrollRight = () => {
+    if (!sliderRef.current) return false;
+    return sliderRef.current.scrollLeft < 
+           sliderRef.current.scrollWidth - sliderRef.current.clientWidth - 10;
+  };
+
+  const scrollLeft = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    scrollToActiveCard(activeSpecialization);
+  }, [activeSpecialization]);
+
   return (
     <section className="py-20 bg-gradient-surface">
       <div className="container mx-auto px-4">
@@ -78,9 +127,35 @@ const SpecializationSlider = ({ activeSpecialization, setActiveSpecialization }:
           </p>
         </div>
 
-        {/* All Specializations Display */}
-        <div className="max-w-5xl mx-auto">
-          <div className="flex overflow-x-auto gap-4 pb-4 mb-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        {/* Dynamic Slider with Navigation */}
+        <div className="max-w-6xl mx-auto relative">
+          {/* Left Navigation Button */}
+          <Button
+            variant="outline"
+            size="sm"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur border-border hover:bg-card shadow-lg"
+            onClick={scrollLeft}
+            disabled={!canScrollLeft()}
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </Button>
+
+          {/* Right Navigation Button */}
+          <Button
+            variant="outline"
+            size="sm"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur border-border hover:bg-card shadow-lg"
+            onClick={scrollRight}
+            disabled={!canScrollRight()}
+          >
+            <ChevronRight className="h-4 w-4" />
+          </Button>
+
+          {/* Scrollable Specializations Container */}
+          <div 
+            ref={sliderRef}
+            className="flex overflow-x-auto gap-5 pb-4 mb-8 mx-12 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          >
             {specializations.map((spec, index) => {
               const IconComponent = spec.icon;
               return (
@@ -88,15 +163,12 @@ const SpecializationSlider = ({ activeSpecialization, setActiveSpecialization }:
                   key={spec.id}
                   variant={activeSpecialization === index ? "default" : "outline"}
                   className={cn(
-                    "flex-shrink-0 h-auto p-6 min-w-[280px] flex flex-col items-center text-center transition-all duration-300",
+                    "flex-shrink-0 h-auto p-6 min-w-[280px] flex flex-col items-center text-center transition-all duration-500 ease-out",
                     activeSpecialization === index
-                      ? "bg-primary text-primary-foreground shadow-glow scale-105"
-                      : "bg-card/50 backdrop-blur border-border hover:border-primary/30 hover:shadow-soft"
+                      ? "bg-primary text-primary-foreground shadow-glow scale-105 animate-scale-in"
+                      : "bg-card/50 backdrop-blur border-border hover:border-primary/30 hover:shadow-soft hover:scale-102"
                   )}
-                  onClick={() => {
-                    setActiveSpecialization(index);
-                    scrollToSection(spec.id);
-                  }}
+                  onClick={() => handleSpecializationClick(index)}
                 >
                   <div className={cn(
                     "p-3 rounded-lg mb-3 transition-all duration-300",
@@ -105,9 +177,9 @@ const SpecializationSlider = ({ activeSpecialization, setActiveSpecialization }:
                       : "bg-gradient-primary"
                   )}>
                     <IconComponent className={cn(
-                      "h-6 w-6",
+                      "h-6 w-6 transition-transform duration-300",
                       activeSpecialization === index
-                        ? "text-primary-foreground"
+                        ? "text-primary-foreground animate-pulse"
                         : "text-background"
                     )} />
                   </div>
@@ -127,21 +199,18 @@ const SpecializationSlider = ({ activeSpecialization, setActiveSpecialization }:
             })}
           </div>
 
-          {/* Navigation dots */}
-          <div className="flex justify-center gap-2">
+          {/* Enhanced Navigation Dots */}
+          <div className="flex justify-center gap-3">
             {specializations.map((_, index) => (
               <button
                 key={index}
                 className={cn(
-                  "w-2 h-2 rounded-full transition-all duration-300",
+                  "w-2 h-2 rounded-full transition-all duration-300 hover:scale-125",
                   activeSpecialization === index
-                    ? "bg-primary w-6"
+                    ? "bg-primary w-8 h-2 animate-pulse"
                     : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                 )}
-                onClick={() => {
-                  setActiveSpecialization(index);
-                  scrollToSection(specializations[index].id);
-                }}
+                onClick={() => handleSpecializationClick(index)}
               />
             ))}
           </div>
