@@ -75,53 +75,26 @@ const SpecializationSlider = () => {
           </p>
         </div>
 
-        {/* Horizontal Slider */}
+        {/* Selected Specialization Display */}
         <div className="max-w-5xl mx-auto">
-          <div className="flex overflow-x-auto gap-4 pb-4 mb-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-            {specializations.map((spec, index) => {
+          <div className="flex justify-center mb-8">
+            {(() => {
+              const spec = specializations[activeSpecialization];
               const IconComponent = spec.icon;
               return (
-                <Button
-                  key={spec.id}
-                  variant={activeSpecialization === index ? "default" : "outline"}
-                  className={cn(
-                    "flex-shrink-0 h-auto p-6 min-w-[280px] flex flex-col items-center text-center transition-all duration-300",
-                    activeSpecialization === index
-                      ? "bg-primary text-primary-foreground shadow-glow scale-105"
-                      : "bg-card/50 backdrop-blur border-border hover:border-primary/30 hover:shadow-soft"
-                  )}
-                  onClick={() => {
-                    setActiveSpecialization(index);
-                    scrollToSection(spec.id);
-                  }}
-                >
-                  <div className={cn(
-                    "p-3 rounded-lg mb-3 transition-all duration-300",
-                    activeSpecialization === index
-                      ? "bg-primary-foreground/20"
-                      : "bg-gradient-primary"
-                  )}>
-                    <IconComponent className={cn(
-                      "h-6 w-6",
-                      activeSpecialization === index
-                        ? "text-primary-foreground"
-                        : "text-background"
-                    )} />
+                <div className="bg-primary text-primary-foreground shadow-glow p-8 rounded-lg flex flex-col items-center text-center transition-all duration-300 min-w-[320px] max-w-[400px]">
+                  <div className="p-4 rounded-lg mb-4 bg-primary-foreground/20">
+                    <IconComponent className="h-8 w-8 text-primary-foreground" />
                   </div>
-                  <h3 className="text-sm font-semibold mb-2 font-heading">
+                  <h3 className="text-xl font-semibold mb-3 font-heading">
                     {spec.title}
                   </h3>
-                  <p className={cn(
-                    "text-xs leading-relaxed",
-                    activeSpecialization === index
-                      ? "text-primary-foreground/80"
-                      : "text-muted-foreground"
-                  )}>
+                  <p className="text-primary-foreground/80 leading-relaxed">
                     {spec.description}
                   </p>
-                </Button>
+                </div>
               );
-            })}
+            })()}
           </div>
 
           {/* Navigation dots */}
