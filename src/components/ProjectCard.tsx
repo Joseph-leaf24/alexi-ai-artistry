@@ -1,16 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
+import { Project } from "@/types/project";
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  concepts: string[];
-  tools?: string[];
-  githubUrl?: string;
-  demoUrl?: string;
+interface ProjectCardProps extends Project {
   category: string;
   projectIndex: number;
 }

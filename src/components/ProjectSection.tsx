@@ -1,15 +1,5 @@
 import ProjectCard from "./ProjectCard";
-
-interface Project {
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  concepts: string[];
-  tools?: string[];
-  githubUrl?: string;
-  demoUrl?: string;
-}
+import { Project } from "@/types/project";
 
 interface ProjectSectionProps {
   title: string;

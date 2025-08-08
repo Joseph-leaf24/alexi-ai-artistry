@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import { projectData } from "@/data/projects";
+import { Project } from "@/types/project";
 
 const ProjectDetails = () => {
   const { category, projectIndex } = useParams();
@@ -10,7 +11,7 @@ const ProjectDetails = () => {
   
   // Find the project based on category and index
   const categoryData = category ? projectData[category as keyof typeof projectData] : null;
-  const project = categoryData && projectIndex ? categoryData.projects[parseInt(projectIndex)] : null;
+  const project: Project | null = categoryData && projectIndex ? categoryData.projects[parseInt(projectIndex)] : null;
   
   if (!project || !categoryData) {
     return (
@@ -52,15 +53,32 @@ const ProjectDetails = () => {
             </p>
           </div>
 
-          {/* Project Image */}
-          <div className="relative rounded-lg overflow-hidden mb-12 shadow-glow">
-            <img 
-              src={project.image} 
-              alt={project.title}
-              className="w-full h-64 md:h-96 object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </div>
+          {/* Project Image or Power BI Dashboard */}
+          {project.powerBiUrl ? (
+            <div className="mb-12">
+              <h3 className="text-2xl font-semibold mb-6 text-center text-foreground">Interactive Dashboard</h3>
+              <div className="relative rounded-lg overflow-hidden shadow-glow bg-card">
+                <iframe 
+                  title={project.title}
+                  width="100%" 
+                  height="600"
+                  src={project.powerBiUrl}
+                  frameBorder="0" 
+                  allowFullScreen={true}
+                  className="w-full"
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="relative rounded-lg overflow-hidden mb-12 shadow-glow">
+              <img 
+                src={project.image} 
+                alt={project.title}
+                className="w-full h-64 md:h-96 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+            </div>
+          )}
 
           {/* Project Details Grid */}
           <div className="grid md:grid-cols-2 gap-12 mb-12">

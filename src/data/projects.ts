@@ -5,8 +5,9 @@ import machineLearningImg from "@/assets/machine-learning.jpg";
 import nlpImg from "@/assets/nlp.jpg";
 import researchImg from "@/assets/research.jpg";
 import mlopsImg from "@/assets/mlops.jpg";
+import { ProjectData } from "@/types/project";
 
-export const projectData = {
+export const projectData: ProjectData = {
   dataAnalytics: {
     title: "Data Analytics",
     description: "Interactive dashboards and business intelligence solutions using Microsoft Power BI for public health and security analytics.",
@@ -18,7 +19,8 @@ export const projectData = {
         tags: ["Power BI", "Public Health", "SDG Tracking"],
         concepts: ["Exploratory Data Analysis", "Data Visualization", "Time Series Analysis", "Regional Benchmarking"],
         tools: ["Microsoft Power BI", "Excel", "WHO Data APIs"],
-        githubUrl: "" // Add your GitHub URL here
+        githubUrl: "", // Add your GitHub URL here
+        powerBiUrl: "https://app.powerbi.com/reportEmbed?reportId=1982aa7d-ed2f-4e89-8bc1-c62fec08aa1f&autoAuth=true&ctid=0a33589b-0036-4fe8-a829-3ed0926af886"
       },
       {
         title: "IKEA Card Skimming Detection Dashboard",
@@ -27,7 +29,8 @@ export const projectData = {
         tags: ["Power BI", "Security Analytics", "Retail"],
         concepts: ["Security Risk Analytics", "Operational Intelligence", "Employee Behavior Analysis", "Compliance Monitoring"],
         tools: ["Microsoft Power BI", "SQL Server", "Excel"],
-        githubUrl: "" // Add your GitHub URL here
+        githubUrl: "", // Add your GitHub URL here
+        powerBiUrl: "https://app.powerbi.com/reportEmbed?reportId=1da2683b-53cd-4774-9cd5-3328b7b6d393&autoAuth=true&ctid=0a33589b-0036-4fe8-a829-3ed0926af886"
       }
     ]
   },
