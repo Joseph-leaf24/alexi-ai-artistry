@@ -38,8 +38,9 @@ const ProjectDetails = () => {
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Portfolio
         </Button>
-        
-        <div className="w-full mx-auto">
+      </div>
+      
+      <div className="max-w-4xl mx-auto px-4">{/* Container for content sections */}
           {/* Project Header */}
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
@@ -55,9 +56,9 @@ const ProjectDetails = () => {
 
           {/* Project Image or Power BI Dashboard */}
           {project.powerBiUrl ? (
-            <div className="mb-12">
-              <h3 className="text-2xl font-semibold mb-6 text-center text-foreground">Interactive Dashboard</h3>
-              <div className="relative rounded-lg overflow-hidden shadow-glow bg-card w-full">
+            <div className="mb-12 -mx-4 md:-mx-8 lg:-mx-16">{/* Extend beyond container padding */}
+              <h3 className="text-2xl font-semibold mb-6 text-center text-foreground px-4">Interactive Dashboard</h3>
+              <div className="relative overflow-hidden shadow-glow bg-card w-full">
                 <iframe 
                   title={project.title}
                   width="100%" 
