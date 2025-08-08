@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Github } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import { projectData } from "@/data/projects";
 import { Project } from "@/types/project";
 
@@ -29,7 +29,6 @@ const ProjectDetails = () => {
 
   return (
     <div className="min-h-screen bg-gradient-surface">
-      {/* Navigation */}
       <div className="container mx-auto px-4 py-8">
         <Button 
           variant="outline" 
@@ -41,105 +40,97 @@ const ProjectDetails = () => {
         </Button>
       </div>
       
-      {/* Project Header */}
-      <div className="max-w-4xl mx-auto px-4 mb-12">
-        <div className="text-center">
-          <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-            {categoryData.title}
+      <div className="max-w-4xl mx-auto px-4">{/* Container for content sections */}
+          {/* Project Header */}
+          <div className="text-center mb-12">
+            <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+              {categoryData.title}
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-accent bg-clip-text text-transparent font-heading">
+              {project.title}
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              {project.description}
+            </p>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-accent bg-clip-text text-transparent font-heading">
-            {project.title}
-          </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            {project.description}
-          </p>
-        </div>
-      </div>
 
-      {/* Power BI Dashboard - Full Width */}
-      {project.powerBiUrl ? (
-        <div className="mb-12">
-          <h3 className="text-2xl font-semibold mb-6 text-center text-foreground">Interactive Dashboard</h3>
-          <div className="w-full h-screen max-h-[80vh]">
-            <iframe 
-              title={project.title}
-              width="100%" 
-              height="100%"
-              src={project.powerBiUrl}
-              frameBorder="0" 
-              allowFullScreen={true}
-              className="w-full h-full border-0"
-              style={{ 
-                margin: 0, 
-                padding: 0,
-                display: 'block',
-                overflow: 'hidden'
-              }}
-            />
-          </div>
-        </div>
-      ) : (
-        <div className="max-w-4xl mx-auto px-4 mb-12">
-          <div className="relative rounded-lg overflow-hidden shadow-glow">
-            <img 
-              src={project.image} 
-              alt={project.title}
-              className="w-full h-64 md:h-96 object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-          </div>
-        </div>
-      )}
-
-      {/* Project Details Grid */}
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 mb-12">
-          {/* Technologies & Tools */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-foreground">Technologies Used</h3>
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag, index) => (
-                  <Badge key={index} variant="secondary" className="text-sm px-3 py-1">
-                    {tag}
-                  </Badge>
-                ))}
+          {/* Project Image or Power BI Dashboard */}
+          {project.powerBiUrl ? (
+            <div className="mb-12 -mx-4 md:-mx-8 lg:-mx-16">{/* Extend beyond container padding */}
+              <h3 className="text-2xl font-semibold mb-6 text-center text-foreground px-4">Interactive Dashboard</h3>
+              <div className="relative overflow-hidden shadow-glow bg-card w-full">
+                <iframe 
+                  title={project.title}
+                  width="100%" 
+                  height="600"
+                  src={project.powerBiUrl}
+                  frameBorder="0" 
+                  allowFullScreen={true}
+                  className="w-full block"
+                  style={{ aspectRatio: '16/10' }}
+                />
               </div>
             </div>
-            
-            {project.tools && project.tools.length > 0 && (
+          ) : (
+            <div className="relative rounded-lg overflow-hidden mb-12 shadow-glow">
+              <img 
+                src={project.image} 
+                alt={project.title}
+                className="w-full h-64 md:h-96 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+            </div>
+          )}
+
+          {/* Project Details Grid */}
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
+            {/* Technologies & Tools */}
+            <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Tools & Languages</h3>
+                <h3 className="text-xl font-semibold mb-4 text-foreground">Technologies Used</h3>
                 <div className="flex flex-wrap gap-2">
-                  {project.tools.map((tool, index) => (
-                    <Badge key={index} variant="outline" className="text-sm px-3 py-1">
-                      {tool}
+                  {project.tags.map((tag, index) => (
+                    <Badge key={index} variant="secondary" className="text-sm px-3 py-1">
+                      {tag}
                     </Badge>
                   ))}
                 </div>
               </div>
-            )}
-          </div>
+              
+              {project.tools && project.tools.length > 0 && (
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-foreground">Tools & Languages</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tools.map((tool, index) => (
+                      <Badge key={index} variant="outline" className="text-sm px-3 py-1">
+                        {tool}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
 
-          {/* AI/Data Science Concepts */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4 text-foreground">AI/Data Science Concepts</h3>
-            <div className="flex flex-wrap gap-2">
-              {project.concepts.map((concept, index) => (
-                <Badge key={index} className="text-sm px-3 py-1 bg-gradient-primary text-white">
-                  {concept}
-                </Badge>
-              ))}
+            {/* AI/Data Science Concepts */}
+            <div>
+              <h3 className="text-xl font-semibold mb-4 text-foreground">AI/Data Science Concepts</h3>
+              <div className="flex flex-wrap gap-2">
+                {project.concepts.map((concept, index) => (
+                  <Badge key={index} className="text-sm px-3 py-1 bg-gradient-primary text-white">
+                    {concept}
+                  </Badge>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Action Buttons */}
-        <div className="flex justify-center mb-12">
-          <Button variant="outline" size="lg" className="min-w-40">
-            <Github className="mr-2 h-5 w-5" />
-            View Source Code
-          </Button>
+          {/* Action Buttons */}
+          <div className="flex justify-center">
+            <Button variant="outline" size="lg" className="min-w-40">
+              <Github className="mr-2 h-5 w-5" />
+              View Source Code
+            </Button>
+          </div>
         </div>
       </div>
     </div>
