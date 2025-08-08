@@ -61,7 +61,7 @@ const ProjectDetails = () => {
                 <iframe 
                   title={project.title}
                   width="100%" 
-                  height="600"
+                  height="800"
                   src={project.powerBiUrl}
                   frameBorder="0" 
                   allowFullScreen={true}
@@ -123,14 +123,10 @@ const ProjectDetails = () => {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Button variant="outline" size="lg" className="min-w-40">
               <Github className="mr-2 h-5 w-5" />
               View Source Code
-            </Button>
-            <Button variant="default" size="lg" className="min-w-40">
-              <ExternalLink className="mr-2 h-5 w-5" />
-              Live Demo
             </Button>
           </div>
         </div>
