@@ -39,7 +39,7 @@ const ProjectDetails = () => {
           Back to Portfolio
         </Button>
         
-        <div className="max-w-4xl mx-auto">
+        <div className="w-full mx-auto">
           {/* Project Header */}
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
@@ -57,15 +57,16 @@ const ProjectDetails = () => {
           {project.powerBiUrl ? (
             <div className="mb-12">
               <h3 className="text-2xl font-semibold mb-6 text-center text-foreground">Interactive Dashboard</h3>
-              <div className="relative rounded-lg overflow-hidden shadow-glow bg-card">
+              <div className="relative rounded-lg overflow-hidden shadow-glow bg-card w-full">
                 <iframe 
                   title={project.title}
                   width="100%" 
-                  height="800"
+                  height="600"
                   src={project.powerBiUrl}
                   frameBorder="0" 
                   allowFullScreen={true}
-                  className="w-full"
+                  className="w-full block"
+                  style={{ aspectRatio: '16/10' }}
                 />
               </div>
             </div>
