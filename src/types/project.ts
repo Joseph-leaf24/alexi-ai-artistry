@@ -9,6 +9,7 @@ export interface Project {
   githubUrl?: string;
   demoUrl?: string;
   powerBiUrl?: string;
+  latexDocument?: string; // LaTeX document content for scientific papers
 }
 
 export interface ProjectCategory {

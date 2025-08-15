@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import { projectData } from "@/data/projects";
 import { Project } from "@/types/project";
+import LaTeXDocument from "@/components/LaTeXDocument";
 
 const ProjectDetails = () => {
   const { category, projectIndex } = useParams();
@@ -143,6 +144,17 @@ const ProjectDetails = () => {
               </div>
             </div>
           </div>
+
+          {/* LaTeX Document */}
+          {project.latexDocument && (
+            <div className="mb-12">
+              <h3 className="text-2xl font-semibold mb-6 text-center text-foreground">Research Document</h3>
+              <LaTeXDocument 
+                content={project.latexDocument} 
+                title={project.title}
+              />
+            </div>
+          )}
 
           {/* Action Buttons */}
           {project.githubUrl && (
