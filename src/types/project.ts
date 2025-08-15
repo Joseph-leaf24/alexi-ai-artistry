@@ -1,7 +1,8 @@
 export interface Project {
   title: string;
   description: string;
-  image: string;
+  image: string; // Cover image for cards
+  images?: string[]; // Additional images for project details
   tags: string[];
   concepts: string[];
   tools?: string[];

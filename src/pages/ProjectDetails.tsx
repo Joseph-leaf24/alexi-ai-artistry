@@ -71,13 +71,34 @@ const ProjectDetails = () => {
               </div>
             </div>
           ) : (
-            <div className="relative rounded-lg overflow-hidden mb-12 shadow-glow">
-              <img 
-                src={project.image} 
-                alt={project.title}
-                className="w-full h-64 md:h-96 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+            <div className="mb-12">
+              {/* Main cover image */}
+              <div className="relative rounded-lg overflow-hidden mb-8 shadow-glow">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-64 md:h-96 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+              </div>
+              
+              {/* Additional images gallery */}
+              {project.images && project.images.length > 0 && (
+                <div>
+                  <h3 className="text-2xl font-semibold mb-6 text-center text-foreground">Project Gallery</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {project.images.map((imageUrl, index) => (
+                      <div key={index} className="relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <img 
+                          src={imageUrl} 
+                          alt={`${project.title} - Image ${index + 1}`}
+                          className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
 
